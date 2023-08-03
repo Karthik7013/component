@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(200deg, rgb(21, 21, 51), rgb(54, 19, 19));
+}
+
+.container {
+    width: 350px;
+    height: 350px;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.layer-1 {
+    position: absolute;
+    background-color: rgba(209, 209, 209, 0.5);
+    border-radius: 100%;
+    animation: layer-1 3s linear 0s infinite;
+}
+
+.layer-2 {
+    position: absolute;
+    background-color: rgba(209, 209, 209, 0.5);
+    border-radius: 100%;
+    animation: layer-2 3s linear 1s infinite;
+}
+
+.layer-3 {
+    position: absolute;
+    background-color: rgba(209, 209, 209, 0.5);
+    border-radius: 100%;
+    animation: layer-3 3s linear 2s infinite;
+}
+
+
+@keyframes layer-1 {
+    from {
+        width: 0;
+        height: 0;
+    }
+
+    to {
+        width: 350px;
+        height: 350px;
+        background-color: transparent;
+    }
+}
+
+@keyframes layer-2 {
+    from {
+        width: 0;
+        height: 0;
+    }
+
+    to {
+        width: 350px;
+        height: 350px;
+        background-color: transparent;
+    }
+}
+
+@keyframes layer-3 {
+    from {
+        width: 0;
+        height: 0;
+    }
+
+    to {
+        width: 350px;
+        height: 350px;
+        background-color: transparent;
+    }
+}
+
+.img {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 999;
+    position: absolute;
+    border: 5px solid white;
+    border-radius: 50%;
+
+}
+
+.boy {
+    top: 50px;
+    left: 50px;
+    background: url(./connection-avatar-poster.4c4f43ff.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.girl1 {
+    top: 90px;
+    right: 20px;
+    background: url(./connection-avatar-like.83474363.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.girl2 {
+    bottom: 50px;
+    left: 120px;
+    background: url(./connection-avatar-comment.4efbc794.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.popUp {
+    position: relative;
+    width: fit-content;
+}
+
+.popUp img {
+    width: 150px;
+    z-index: 9999;
+}
+
+.comment {
+    top: -45px;
+    left: 45px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s linear;
+}
+
+.poster {
+    top: -187px;
+    left: 60px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s linear;
+}
+
+.like {
+    top: -50px;
+    right: -50px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s linear;
+}
+
+.active-popup {
+    transition: all 1s linear;
+    width: fit-content;
+    overflow: visible;
+    height: fit-content;
+    transform: scale(1.1);
+    transition: transform .3s linear;
+}
+
+.active-img {
+    border-color: rgb(211, 12, 92);
+    transform: scale(1.1);
+    transition: transform .3s linear;
+}
