@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave</title>
+    <link rel="stylesheet" href="./light.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="img boy">
+            <div class="popUp poster " id="boy">
+                <img src="./popup-poster.5bda53bc.png" alt="">
+            </div>
+        </div>
+        <div class="img girl1">
+            <div class="popUp like" id="girl1">
+                <img src="./popup-like.71040929.png" alt="">
+            </div>
+        </div>
+        <div class="img girl2">
+            <div class="popUp comment" id="girl2">
+                <img src="./popup-comment.dc4565ab.png" alt="">
+            </div>
+        </div>
+
+
+
+        <div class="layer-1">
+        </div>
+        <div class="layer-2">
+        </div>
+        <div class="layer-3">
+
+        </div>
+    </div>
+
+    <script>
+        let boy = document.getElementById("boy");
+        let g1 = document.getElementById("girl1")
+        let g2 = document.getElementById("girl2");
+        let sequence = [boy, g2, g1];
+        let start = 0;
+
+        window.setInterval(() => {
+            for (let i = 0; i <= 2; i++) {
+                if (start === i) {
+                    sequence[start].classList.add("active-popup");
+                    sequence[start].parentNode.classList.add("active-img");
+                }
+                else {
+                    sequence[i].classList.remove("active-popup");
+                    sequence[i].parentNode.classList.remove("active-img");
+                }
+            }
+            if (start == 2) {
+                start = 0;
+            } else {
+                start++;
+            }
+        }, 3000)
+    </script>
+</body>
+
+</html>
